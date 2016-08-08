@@ -1,9 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import { Application } from "./components/Application.tsx";
+import "./aux.js";
 
-import { Hello } from "./components/Hello";
-
-ReactDOM.render(
-    <Hello compiler="TypeScript + Goodies" framework="React" />,
-    document.getElementById("app")
-);
+ReactDOM.render(<Application />, document.getElementById("app"));

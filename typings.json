@@ -1,6 +1,15 @@
 {
+  "dependencies": {
+    "d3-array": "registry:npm/d3-array#1.0.0+20160701011035",
+    "d3-ease": "registry:npm/d3-ease#1.0.0+20160622193901",
+    "d3-quadtree": "https://raw.githubusercontent.com/tomwanzek/d3-v4-definitelytyped/cfd3c13a28e935560a553373898deb1ad9a119fe/src/d3-quadtree/index.d.ts",
+    "d3-random": "https://raw.githubusercontent.com/tomwanzek/d3-v4-definitelytyped/cfd3c13a28e935560a553373898deb1ad9a119fe/src/d3-random/index.d.ts",
+    "d3-scale": "registry:npm/d3-scale#1.0.0+20160707082208",
+    "d3-timer": "https://raw.githubusercontent.com/tomwanzek/d3-v4-definitelytyped/cfd3c13a28e935560a553373898deb1ad9a119fe/src/d3-timer/index.d.ts"
+  },
   "globalDependencies": {
-    "react": "registry:dt/react#0.14.0+20160720060442",
+    "react": "registry:dt/react#0.14.0+20160802191555",
+    "react-addons-perf": "registry:dt/react-addons-perf#15.1.0+20160619031933",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040"
   }
 }

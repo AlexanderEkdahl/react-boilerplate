@@ -10,12 +10,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "d3-array": "^1.0.1",
+    "d3-ease": "^1.0.1",
+    "d3-quadtree": "^1.0.1",
+    "d3-random": "^1.0.1",
+    "d3-scale": "^1.0.3",
+    "d3-timer": "^1.0.2",
     "react": "^15.2.1",
     "react-dom": "^15.2.1"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.10",
+    "expose-loader": "^0.7.1",
     "html-webpack-plugin": "^2.22.0",
+    "react-addons-perf": "^15.3.0",
     "source-map-loader": "^0.1.5",
     "ts-loader": "^0.8.2",
     "typescript": "^1.8.10",
