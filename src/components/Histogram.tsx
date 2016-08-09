@@ -6,8 +6,8 @@ import BarChart from './barchart/BarChart.tsx';
 export interface HistogramProps {
 	padding: number,
 	targetBarWidth: number,
-	width: number,
-	height: number,
+	containerWidth?: number,
+	containerHeight?: number,
 	domain: [number, number],
 	data: number[]
 }
@@ -22,14 +22,14 @@ export default class Histogram extends React.Component<HistogramProps, {}> {
 		const {
 			padding,
 			targetBarWidth,
-			width,
-			height,
+			containerWidth,
+			containerHeight,
 		} = this.props;
 	    let barWidth: number = targetBarWidth;
 	    let cost: number = Infinity;
 
 	    for (let i = Math.ceil(targetBarWidth / 1.1); i <= Math.floor(targetBarWidth * 1.1); i++) {
-	      const newCost = this.costFunction(width, i, padding);
+	      const newCost = this.costFunction(containerWidth, i, padding);
 
 	      // if costs are equal, the closest one should be kept
 	      // if (newCost == cost && Math.abs(targetBarWidth - i) < Math.abs(targetBarWidth - barWidth)) || newCost < cost
@@ -39,11 +39,11 @@ export default class Histogram extends React.Component<HistogramProps, {}> {
 	      }
 	    }
 
-	    const bars = Math.floor((padding + width) / (barWidth + padding));
+	    const bars = Math.floor((padding + containerWidth) / (barWidth + padding));
 
 	    // console.log('barWidth: " + barWidth);
 	    // console.log("usedWidth: " + (padding * (bars - 1) + bars * barWidth));
-	    // console.log("costFunction: " + this.costFunction(width, barWidth, padding));
+	    // console.log("costFunction: " + this.costFunction(containerWidth, barWidth, padding));
 	    // console.log("bars: " + bars);
 
 	    const domain = this.props.domain ? this.props.domain : extent(this.props.data);
@@ -52,7 +52,7 @@ export default class Histogram extends React.Component<HistogramProps, {}> {
 	    const bins = histogram<number>().domain(domain).thresholds(thresholds)(this.props.data);
 
 	    return (
-	      <BarChart data={bins.map(d => d.length)} barWidth={barWidth} width={width} height={height} padding={padding} />
+	      <BarChart data={bins.map(d => d.length)} barWidth={barWidth} width={containerWidth} height={containerHeight} padding={padding} />
 	    );
     }
 }

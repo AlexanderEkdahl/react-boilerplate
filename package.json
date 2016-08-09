@@ -10,12 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "autolayout": "^0.6.0",
     "d3-array": "^1.0.1",
     "d3-ease": "^1.0.1",
-    "d3-quadtree": "^1.0.1",
     "d3-random": "^1.0.1",
     "d3-scale": "^1.0.3",
     "d3-timer": "^1.0.2",
+    "hyphenation.en-us": "^0.2.1",
+    "hypher": "^0.2.4",
     "react": "^15.2.1",
     "react-dom": "^15.2.1"
   },
