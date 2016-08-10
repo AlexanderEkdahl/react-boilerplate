@@ -29,7 +29,7 @@ interface Line {
 }
 
 interface Formatter {
-	(f:(str: string) => number): {
+	(measureText:(str: string) => number, hyphenate:(word: string) => string[]): {
 		justify(text: string): Node[],
 		center(text: string): Node[],
 		left(text: string): Node[],
@@ -41,7 +41,7 @@ interface Linebreak {
 	infinity: number
 }
 
-const font = 'normal normal 300 16px/1.3 "Lato", sans-serif';
+const font = 'normal normal 300 16px/1.4 "Palatino", sans-serif';
 
 export default class TextBlock extends React.Component<TextBlockProps, {}> {
 	render() {
@@ -50,6 +50,11 @@ export default class TextBlock extends React.Component<TextBlockProps, {}> {
 		context.font = font;
 		let format = formatter((str: string) => {
 			return context.measureText(str).width;
+		},(word: string) => {
+			if (word.length > 4) {
+			    return [word.slice(0, Math.floor(word.length / 2)), word.slice(Math.floor(word.length / 2), word.length)]
+			}
+			return [word];
 		});
 		let nodes = format.justify(this.props.text);
 		let breaks = linebreak(nodes, [this.props.containerWidth], {tolerance: 10});
@@ -92,11 +97,11 @@ export default class TextBlock extends React.Component<TextBlockProps, {}> {
 				}
 			}
 
-			y += 20.8; // font-size * line-height
+			y += 22.4; // font-size * line-height
 		}
 
 		return (
-			<text style={{font: font, cursor: 'default'}}>
+			<text style={{font: font, cursor: 'default', fill: '#404040'}}>
 				{tspans}
 			</text>
 		);

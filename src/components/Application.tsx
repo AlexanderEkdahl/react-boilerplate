@@ -2,20 +2,20 @@ import * as React from 'react';
 import {randomLogNormal} from 'd3-random';
 import {range} from 'd3-array';
 import {Stylesheet} from '../interfaces.ts';
-import {Layout} from './layout.tsx';
+import {Layout} from './Layout.tsx';
 import Histogram from './Histogram.tsx';
 import TextBlock from './TextBlock.tsx';
 import TextSpan from './TextSpan.tsx';
 
-var data = range(500).map(randomLogNormal())
+var data = range(5000).map(randomLogNormal())
 var text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.";
 
 const layout = [
-	'H:|-10%-[chart]-30-[summary]-10%-|',
+	'H:|-10%-[chart]-[summary]-10%-|',
 	'H:|-10%-[header]-10%-|',
-	'V:|-15%-[header(55)]-[chart]-25%-|',
+	'V:|-15%-[header(32)]-[chart]-25%-|',
 	'V:|-15%-[header]-[summary(chart)]-25%-|',
-	'H:[summary(300)]',
+	'H:[summary(400)]',
 	'H:[chart(>=summary)]'
 ]
 
@@ -60,6 +60,7 @@ export class Application extends React.Component<{}, {}> {
 				<Layout evfl={layout}
 				        width={window.innerWidth}
 						height={window.innerHeight}
+						spacing={Math.sqrt(window.innerWidth * window.innerHeight)/25}
 						views={{chart: chart, summary: summary, header: header, }}/>
 			</svg>
 		);

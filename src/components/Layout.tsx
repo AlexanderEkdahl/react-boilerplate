@@ -8,6 +8,7 @@ export interface LayoutProps {
 	evfl: string[],
 	width: number,
 	height: number,
+	spacing?: number,
 }
 
 export class Layout extends React.Component<LayoutProps, {}> {
@@ -25,12 +26,14 @@ export class Layout extends React.Component<LayoutProps, {}> {
         this.view = new AutoLayout.View({
             constraints: constraints,
             width: props.width,
-            height: props.height
+            height: props.height,
+			spacing: props.spacing || 8,
         });
     }
 
 	componentWillUpdate(nextProps: LayoutProps) {
 		this.view.setSize(nextProps.width, nextProps.height);
+		this.view.setSpacing(nextProps.spacing || 8);
 	}
 
 	render() {

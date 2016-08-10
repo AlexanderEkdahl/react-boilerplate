@@ -27,7 +27,7 @@ class Bars extends React.Component<BarsProps, BarsState> {
 		};
 	}
 	componentDidMount() {
-		this.animate();
+		// this.animate();
 	}
 	componentWillReceiveProps() {
 		this.setState({
@@ -35,7 +35,7 @@ class Bars extends React.Component<BarsProps, BarsState> {
 		});
 	}
 	componentDidUpdate() {
-		this.animate();
+		// this.animate();
 	}
 	componentWillUnmount() {
 		if (this.timer) {
@@ -43,7 +43,8 @@ class Bars extends React.Component<BarsProps, BarsState> {
 		}
 	}
 	previousValue(i: number) {
-		return this.state.previousValues[i] === undefined ? 0 : this.state.previousValues[i];
+		return this.props.data[i];
+		// return this.state.previousValues[i] === undefined ? 0 : this.state.previousValues[i];
 	}
 	animate() {
 		if (this.timer) {
