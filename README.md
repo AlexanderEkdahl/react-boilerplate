@@ -8,10 +8,14 @@ Simple starting point for TypeScript and React.
 - TypeScript
 - Webpack
 
+## Getting stared
+
+    npm install
+
 ## Development
 
-    npn run dev
+    npm run dev
 
 ## Production build
 
-    npn run dist
+    npm run dist
