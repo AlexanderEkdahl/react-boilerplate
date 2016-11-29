@@ -4,21 +4,23 @@
   "description": "",
   "scripts": {
     "dist": "webpack",
+    "lint": "tslint 'src/**/*' --fix",
     "dev": "webpack-dev-server"
   },
-  "author": "",
+  "author": "Alexander Ekdahl",
   "license": "ISC",
   "dependencies": {
-    "@types/react-dom": "^0.14.19",
     "@types/react": "^0.14.50",
+    "@types/react-dom": "^0.14.19",
     "clean-webpack-plugin": "^0.1.10",
     "html-webpack-plugin": "^2.22.0",
-    "react-dom": "^15.2.1",
     "react": "^15.2.1",
+    "react-dom": "^15.2.1",
     "source-map-loader": "^0.1.5",
     "ts-loader": "^1.2.2",
+    "tslint": "^4.0.2",
     "typescript": "^2.0.10",
-    "webpack-dev-server": "^1.16.2",
-    "webpack": "^1.13.3"
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
   }
 }

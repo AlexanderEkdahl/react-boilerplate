@@ -10,12 +10,12 @@ Simple starting point for TypeScript and React.
 
 ## Getting stared
 
-    npm install
+    yarn install
 
 ## Development
 
-    npm run dev
+    yarn run dev
 
 ## Production build
 
-    npm run dist
+    yarn run dist
