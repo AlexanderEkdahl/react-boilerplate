@@ -33,9 +33,8 @@ var configuration = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Lines',
             cache: true,
-            template: 'index.ejs',
+            template: 'index.html',
         }),
     ],
 };

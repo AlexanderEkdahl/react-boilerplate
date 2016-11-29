@@ -1,8 +1,7 @@
 {
-  "name": "lines",
+  "name": "react-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "./dist/bundle.js",
   "scripts": {
     "dist": "webpack",
     "dev": "webpack-dev-server"
@@ -10,16 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1"
-  },
-  "devDependencies": {
+    "@types/react-dom": "^0.14.19",
+    "@types/react": "^0.14.50",
     "clean-webpack-plugin": "^0.1.10",
     "html-webpack-plugin": "^2.22.0",
+    "react-dom": "^15.2.1",
+    "react": "^15.2.1",
     "source-map-loader": "^0.1.5",
-    "ts-loader": "^0.8.2",
-    "typescript": "^1.8.10",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "ts-loader": "^1.2.2",
+    "typescript": "^2.0.10",
+    "webpack-dev-server": "^1.16.2",
+    "webpack": "^1.13.3"
   }
 }
