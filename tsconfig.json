@@ -1,8 +1,8 @@
 {
     "compilerOptions": {
         "sourceMap": true,
-        "noImplicitAny": true,
         "module": "commonjs",
+        "noImplicitAny": true,
         "target": "es5",
         "jsx": "react",
         "strictNullChecks": true
